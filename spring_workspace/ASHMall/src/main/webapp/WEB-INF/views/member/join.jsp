@@ -46,7 +46,7 @@
 	<div class="col">
     
     <h2>MEMBERSHIP</h2>
-    <form id="frmJoin" action="joinOk" method="post"> <!-- action에 값이 들어가있지 않으면 요청한 주소를 다시 호출한다. -->
+    <form id="frmJoin" action="join" method="post"> <!-- action에 값이 들어가있지 않으면 요청한 주소를 다시 호출한다. -->
         <table class="table table-boardered">
             <tr>
                 <th>ID</th>
@@ -54,6 +54,10 @@
                 	<button id="btn_checkId" class="btn" type="button">CHECK &#x2713;</button></td>
                 <td><p id="id_availability"></p></td>
             </tr>
+            <tr>
+                <th>USER NAME</th>
+                <td><input type="text" id="mb_nickname" class="form-control" name="mb_nickname" placeholder="ENTER YOUR USER NAME"></td>       
+            </tr>           
             <tr>
                 <th>NAME</th>
                 <td><input type="text" class="form-control" id="mb_name" name="mb_name" placeholder="ENTER YOUR FULL NAME"></td>        
@@ -101,10 +105,6 @@
                 <th>PHONE</th>
                 <td><input type="tel" id="mb_phone" class="form-control" name="mb_phone" placeholder="ENTER YOUR PHONE NUMBER"></td>       
             </tr>          
-            <tr>
-                <th>USER NAME</th>
-                <td><input type="text" id="mb_nickname" class="form-control" name="mb_nickname" placeholder="ENTER YOUR USER NAME"></td>       
-            </tr>           
 			<!-- <tr>
 			    <th>EMAIL SUBSCRIPTION</th>
 			    <td><input type="text" class="form-control" placeholder="Y / N" name="mb_accept_e"></td> 

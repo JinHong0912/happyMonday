@@ -23,11 +23,13 @@ public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
+	/* 로그인(GET) */ 
 	@RequestMapping(value="/main", method=RequestMethod.GET)
 	public String adminMain() {
 		return "admin/main";
 	}
 	
+	/* 로그인(POST) */
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String loginPOST(AdminDTO dto, RedirectAttributes redirect, HttpSession session) throws Exception {
 		

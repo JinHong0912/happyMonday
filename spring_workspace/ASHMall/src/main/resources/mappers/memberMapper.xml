@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 <!-- Login(Member DTO를 가져옴) 비밀번호에 파라미터 사용하지x -->
-	<select id="login" parameterType="MemberDTO" resultType="MemberDTO">
+	<select id="login" parameterType="MemberDTO" resultType="MemberVO">
 	select mb_id, mb_name, mb_password, mb_nickname, mb_point, mb_update
 	from mb_tb
 	where mb_id = #{mb_id}
@@ -32,10 +32,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- parameterType="com.ashmall.domain.MemberVO
 		mybatis-config.xml에서 패키지명 설정작업으로 생략가능  -->
 	<insert id="join" parameterType="MemberVO">
-	insert into mb_tb(mb_id, mb_name, mb_password, mb_email, mb_zipcode, mb_addr, 
-		mb_addr_d, mb_phone, mb_nickname)
-	values(#{mb_id}, #{mb_name}, #{mb_password}, #{mb_email}, #{mb_zipcode}, #{mb_addr}, 
-		#{mb_addr_d}, #{mb_phone}, #{mb_nickname}
+	insert into mb_tb(mb_id, mb_name, mb_password, mb_email, mb_zipcode, mb_addr, mb_addr_d, mb_phone, mb_nickname)
+	values(#{mb_id}, #{mb_name}, #{mb_password}, #{mb_email}, #{mb_zipcode}, #{mb_addr}, #{mb_addr_d}, #{mb_phone}, #{mb_nickname})
 	</insert>
 
 <!-- 아이디 중복체크 (String으로 타입변환 확인)--> 

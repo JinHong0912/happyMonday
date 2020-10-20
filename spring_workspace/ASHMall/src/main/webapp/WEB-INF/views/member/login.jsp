@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,13 @@
   <!-- Bootstrap core CSS -->
   <!-- Custom styles for this template -->
 <%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
-  
+<script type="text/javascript" src="/js/member/login.js"></script>
+<script>
+	if("${msg}"=="LOGIN_FAIL"){	
+		alert("로그인에 실패하였습니다.\n아이디와 비밀번호를 다시 확인해주세요.");
+	}
+</script>
+
   <style>
 .login-form {
     width: 340px;
@@ -62,16 +69,16 @@
 			    <form id="loginForm" action="/member/loginPost" method="post">
 			        <h2 class="text-center">SIGN IN</h2>       
 			        <div class="form-group">
-			            <input type="text" class="form-control" placeholder="USERNAME" required="required">
+			            <input type="text" class="form-control" id="mb_id" placeholder="USERNAME" required="required">
 			        </div>
 			        <div class="form-group">
-			            <input type="password" class="form-control" placeholder="PASSWORD" required="required">
+			            <input type="password" class="form-control" id="mb_password" placeholder="PASSWORD" required="required">
 			        </div>
 			        <div class="form-group">
 			            <button id="btn_login" type="submit" class="btn btn-primary btn-block">SIGN IN</button>
 			        </div>
 			        <div class="clearfix">
-			            <label class="float-left form-check-label"><input type="checkbox"> REMEMBER ME</label>
+			            <label class="float-left form-check-label"><input type="checkbox" name="useCookie"> REMEMBER ME</label>
 			            <a href="#" class="float-right">&#128274; FORGOT</a>
 			        </div>        
 			    </form>

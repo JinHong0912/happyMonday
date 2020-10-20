@@ -42,14 +42,14 @@ public class MemberController {
 	 	리턴타입이 String이면 return type이 jsp파일
 	*/
 	
-	/* 로그인(GET) */ 
+	/* 02. 로그인(GET) */ 
 	/* 리턴타입이 void인 경우에는 JSP파일명은 요청주소(/member/login)가 된다.  */
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public void loginGET() {
 		
 	}
 	
-	/* 로그인(POST) */
+	/* 03. 로그인(POST) */
 	/* RedirectAttributes 클래스 : 이동되는 주소에 데이터 (Return "redirect:/") */
 	@RequestMapping(value="loginPost", method=RequestMethod.POST)
 	public String loginPOST(MemberDTO dto, RedirectAttributes redirect, HttpSession session,
@@ -60,6 +60,8 @@ public class MemberController {
 		MemberDTO memDTO = service.login(dto);	// service클래스에서 일반암호와 데이터베이스에서 가져온 암호문자열
 		
 		if(memDTO != null) {	// 로그인 성공 
+			
+			logger.info("=====로그인 성공");
 			/* 세션작업 : 저장소 - 서버의 메모리 (현재 연결된 사용자 사용이 가능) */
 			/* memDTO : 아이디, 비밀번호, 이름, 최근접속시간 */
 			session.setAttribute("user", memDTO);

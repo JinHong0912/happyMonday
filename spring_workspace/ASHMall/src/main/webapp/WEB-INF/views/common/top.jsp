@@ -16,7 +16,7 @@
           <li class="nav-item"> <a class="nav-link" href="/member/login">LOGIN</a> </li>
           <li class="nav-item"> <a class="nav-link" href="/member/join">JOIN</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#">SEARCH</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">MY PAGE</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/member/modify">MY PAGE</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#">SHOPPING BAG</a> </li>
         </ul>
       </div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ashmall.mappers.AdminMapper">
+
+	<select id="login" parameterType="AdminDTO" resultType="AdminVO">
+		select admin_id, admin_pw, admin_name, admin_date_late
+		from admin_tb
+		where admin_id=#{admin_id} and admin_pw=#{admin_pw}
+	</select>
+
+	<update id="loginUpdate" parameterType="string">
+		update admin_tb
+		set admin_date_late = sysdate
+		where admin_id=#{admin_id}
+	</update>
+
+</mapper>
